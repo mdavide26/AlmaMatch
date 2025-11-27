@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel="stylesheet" href="/AlmaMatch/css/base.css">
+    <link rel="stylesheet" href="/AlmaMatch/css/explorer.css">
     <title>AlmaMatch</title>
     <script src="/AlmaMatch/js/base.js"></script>
 </head>
