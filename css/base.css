@@ -1,0 +1,11 @@
+/* DARK THEME */
+[data-bs-theme="light"] .adaptive-button {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+/* LIGHT THEME */
+[data-bs-theme="dark"] .adaptive-button {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
