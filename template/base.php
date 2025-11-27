@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel="stylesheet" href="css/base.css">
     <title>AlmaMatch</title>
     <script src="js/base.js"></script>
@@ -21,7 +22,7 @@
     <!-- Content visible for Mobile -->
     <div class="d-block d-md-none d-flex flex-column min-vh-100">
         <header class="mobile-header d-flex align-items-center">
-            <img src="upload/icons/almamatch.png" class="h-100" alt="AlmaMatch Icon">
+            <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="AlmaMatch Icon">
             <h1 class="Alma">Alma</h1><h1 class="Match">Match</h1>
         </header>
         <main class="flex-grow-1">
@@ -33,8 +34,8 @@
             <a href="#" class="text-decoration-none"><i class="fi fi-br-house-chimney" style="color: #DF693E;"></i></a>
             <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-br-navigation"></i></a>
             <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-br-bolt"></i></a>
-            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-br-beacon"></i></a>
-            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-br-user"></i></a>
+            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-bs-comment"></i></a>
+            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-bs-user"></i></a>
         </footer>
     </div>
     
