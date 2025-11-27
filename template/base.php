@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel="stylesheet" href="/AlmaMatch/css/base.css">
-    <title>AlmaMatch</title>
+    <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="/AlmaMatch/js/base.js"></script>
 </head>
 <body class="container-fluid p-0">
@@ -31,11 +31,15 @@
             ?>
         </main>
         <footer class="icons-menu d-flex justify-content-center align-items-center py-5 gap-5">
-            <a href="/AlmaMatch/" class="text-decoration-none"><i class="fi fi-br-house-chimney" style="color: #DF693E;"></i></a>
-            <a href="/AlmaMatch/explorer" class="text-decoration-none text-secondary"><i class="fi fi-br-navigation"></i></a>
-            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-br-bolt"></i></a>
-            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-bs-comment"></i></a>
-            <a href="#" class="text-decoration-none text-secondary"><i class="fi fi-bs-user"></i></a>
+            <?php 
+                foreach(ICONS_MENU as $icon) {
+                    if ($icon['page'] === basename($templateParams["name"], ".php")) {
+                        echo '<a href="'.$icon['href'].'" class="text-decoration-none" style="color: #DF693E;"><i class="'.$icon['icon'].'"></i></a>';
+                    } else {
+                        echo '<a href="'.$icon['href'].'" class="text-decoration-none text-secondary"><i class="'.$icon['icon'].'"></i></a>';
+                    }
+                }
+            ?>
         </footer>
     </div>
     
