@@ -22,7 +22,8 @@
         -1px -1px 0 #000,  
          1px -1px 0 #000,
         -1px  1px 0 #000,
-         1px  1px 0 #000;
+         1px  1px 0 #000,
+         2px 3px 5px rgb(0, 0, 0);
 }
 
 span.name-age {
@@ -64,20 +65,40 @@ div button {
     color: #0088FF;
 }
 
+/***************/
 /* LIGHT THEME */
-[data-bs-theme="light"] .image-container i {
-    color: rgb(240, 240, 240);
-    -webkit-text-stroke: 0.5px rgb(22, 22, 22);
-    text-stroke: 0.5px rgb(22, 22, 22);
+/***************/
+
+[data-bs-theme="light"] .image-container img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* DARK THEME */
-[data-bs-theme="dark"] .image-container i {
+[data-bs-theme="light"] .image-container i {
     color: rgb(22, 22, 22);
     -webkit-text-stroke: 0.5px rgb(240, 240, 240);
     text-stroke: 0.5px rgb(240, 240, 240);
 }
 
+[data-bs-theme="light"] div button {
+    background-color: #F0F0F0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="light"] .refresh-icon  {
+    fill: #ceb10f;
+}
+
+/**************/
+/* DARK THEME */
+/**************/
+
+[data-bs-theme="dark"] .image-container i {
+    color: rgb(240, 240, 240);
+    -webkit-text-stroke: 0.5px rgb(22, 22, 22);
+    text-stroke: 0.5px rgb(22, 22, 22);
+}
+
 [data-bs-theme="dark"] div button {
     background-color: #1E1E1E;
+    box-shadow: 0 4px 12px rgb(22, 22, 22);
 }
