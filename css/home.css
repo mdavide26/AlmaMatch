@@ -1,0 +1,83 @@
+.image-container {
+    height: 85%;
+}
+
+.image-container img {
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+.image-container i {
+    font-size: 2.5rem;
+}
+
+.image-container .fi-bs-arrow-circle-up {
+    font-size: 2rem;
+}
+
+.image-container span {
+    font-family: "Alexandria", sans-serif;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+span.name-age {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+span.study-plan {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+div button {
+    border-radius: 50%;
+    width: 4.75rem;
+    height: 4.75rem;
+    border: none;
+}
+
+.refresh-icon {
+    fill: #F8E058;
+}
+
+.dislike-icon {
+    color: #C00F0C;
+    -webkit-text-stroke: 3px #C00F0C;
+    text-stroke: 3px #C00F0C;
+}
+
+.star-icon {
+    color: #00C0E8;
+}
+
+.like-icon {
+    color: #34C759
+}
+
+.send-icon {
+    color: #0088FF;
+}
+
+/* LIGHT THEME */
+[data-bs-theme="light"] .image-container i {
+    color: rgb(240, 240, 240);
+    -webkit-text-stroke: 0.5px rgb(22, 22, 22);
+    text-stroke: 0.5px rgb(22, 22, 22);
+}
+
+/* DARK THEME */
+[data-bs-theme="dark"] .image-container i {
+    color: rgb(22, 22, 22);
+    -webkit-text-stroke: 0.5px rgb(240, 240, 240);
+    text-stroke: 0.5px rgb(240, 240, 240);
+}
+
+[data-bs-theme="dark"] div button {
+    background-color: #1E1E1E;
+}
