@@ -1,0 +1,83 @@
+header span {
+    font-family: "Alexandria", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+.profile-picture {
+    height: 18vh;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.template-image-missing {
+    border: none;
+}
+
+.pictures-container i {
+    font-size: 1.75rem;
+}
+
+.info-label {
+    font-family: "Alexandria", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.03rem;
+    border: none;
+    height: 4rem;
+}
+
+.info-label i {
+    font-size: 1.5rem;
+    color: #DF693E;
+}
+
+/***************/
+/* LIGHT THEME */
+/***************/
+
+[data-bs-theme="light"] header span {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+[data-bs-theme="light"] .profile-picture {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="light"] .template-image-missing {
+    background-color: #FF9169;
+}
+
+[data-bs-theme="light"] .pictures-container i {
+    color: #631B00;
+}
+
+[data-bs-theme="light"] .info-label {
+    background-color: #FF9169;
+}
+
+[data-bs-theme="light"] .info-label i {
+    color: #631B00;
+}
+
+
+/**************/
+/* DARK THEME */
+/**************/
+
+[data-bs-theme="dark"] .template-image-missing {
+    background-color: #2B1810;
+}
+
+[data-bs-theme="dark"] .pictures-container i {
+    color: #DF693E;
+}
+
+[data-bs-theme="dark"] .info-label {
+    background-color: #2B1810;
+}
+
+[data-bs-theme="dark"] .info-label i {
+    color: #DF693E;
+}

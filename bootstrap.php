@@ -12,6 +12,6 @@
         ['href' => PROJECT_DIR."explorer", 'icon' => 'fi-br-navigation', 'page' => 'explorer'],
         ['href' => '#', 'icon' => 'fi-br-bolt', 'page' => 'matches'],
         ['href' => '#', 'icon' => 'fi-bs-comment', 'page' => 'messages'],
-        ['href' => '#', 'icon' => 'fi-bs-user', 'page' => 'profile']
+        ['href' => PROJECT_DIR."profile", 'icon' => 'fi-bs-user', 'page' => 'profile']
     ]);
 ?>
