@@ -73,15 +73,15 @@ cursor:pointer;
 }
 
 /* LIGHT THEME */
-[data-bs-theme="light"] .card {
+[data-bs-theme="light" i] .card {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
-[data-bs-theme="light"] .image-caption {
+[data-bs-theme="light" i] .image-caption {
     color: #000;
 }
 
 /* DARK THEME */
-[data-bs-theme="dark"] .image-caption {
+[data-bs-theme="dark" i] .image-caption {
     color: #fff;
 }

@@ -44,13 +44,13 @@ footer a {
 }
 
 /* LIGHT THEME */
-[data-bs-theme="light"] body {
+[data-bs-theme="light" i] body {
     background-color: #e9ecef;
     color: #212529;
 }
 
 /* DARK THEME */
-[data-bs-theme="dark"] body {
+[data-bs-theme="dark" i] body {
     background-color: #000000;
     color: #f8f9fa;
 }

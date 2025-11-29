@@ -69,22 +69,22 @@ div button {
 /* LIGHT THEME */
 /***************/
 
-[data-bs-theme="light"] .image-container img {
+[data-bs-theme="light" i] .image-container img {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-[data-bs-theme="light"] .image-container i {
+[data-bs-theme="light" i] .image-container i {
     color: rgb(22, 22, 22);
     -webkit-text-stroke: 0.5px rgb(240, 240, 240);
     text-stroke: 0.5px rgb(240, 240, 240);
 }
 
-[data-bs-theme="light"] div button {
+[data-bs-theme="light" i] div button {
     background-color: #F0F0F0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-[data-bs-theme="light"] .refresh-icon  {
+[data-bs-theme="light" i] .refresh-icon  {
     fill: #ceb10f;
 }
 
@@ -92,13 +92,13 @@ div button {
 /* DARK THEME */
 /**************/
 
-[data-bs-theme="dark"] .image-container i {
+[data-bs-theme="dark" i] .image-container i {
     color: rgb(240, 240, 240);
     -webkit-text-stroke: 0.5px rgb(22, 22, 22);
     text-stroke: 0.5px rgb(22, 22, 22);
 }
 
-[data-bs-theme="dark"] div button {
+[data-bs-theme="dark" i] div button {
     background-color: #1E1E1E;
     box-shadow: 0 4px 12px rgb(22, 22, 22);
 }
