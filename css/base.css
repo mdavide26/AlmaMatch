@@ -1,5 +1,26 @@
+:root {
+    --safe-area-inset-top: env(safe-area-inset-top, 0px);
+    --safe-area-inset-right: env(safe-area-inset-right, 0px);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-inset-left: env(safe-area-inset-left, 0px);
+}
+
+body {
+    /* Aggiungi padding per rispettare la safe area sui lati */
+    padding-left: var(--safe-area-inset-left);
+    padding-right: var(--safe-area-inset-right);
+}
+
+main {
+    padding-top: calc(15vh + var(--safe-area-inset-top));
+    padding-bottom: calc(7rem + var(--safe-area-inset-bottom));
+}
+
 .mobile-header {
-    height: 15vh;
+    /* Aggiungi padding in alto per non finire sotto il notch */
+    padding-top: var(--safe-area-inset-top);
+    /* Potrebbe essere necessario aumentare l'altezza per compensare il padding */
+    height: calc(15vh + var(--safe-area-inset-top)); /* Adatta 56px all'altezza originale del tuo header */
 }
 
 .mobile-header h1 {
@@ -13,6 +34,13 @@ footer a {
 
 .mobile-header .Alma {
     color: #DF693E;
+}
+
+.icons-menu {
+    /* Aggiungi padding in basso per non finire sotto la home bar */
+    padding-bottom: var(--safe-area-inset-bottom);
+    /* Potrebbe essere necessario aumentare l'altezza per compensare il padding */
+    height: calc(5rem + var(--safe-area-inset-bottom)); /* Adatta 5rem all'altezza originale del tuo footer */
 }
 
 /* LIGHT THEME */

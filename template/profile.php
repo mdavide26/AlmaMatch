@@ -1,9 +1,9 @@
-<div class="contianer-fluid w-100">
+<div class="w-100">
     <div class="profile-pictures">
         <header>
             <span class="ps-3">Profile pictures</span>
         </header>
-        <div class="pictures-container py-4 px-4 mb-2 col-12 d-flex align-items-center justify-content-center gap-2">
+        <div class="pictures-container py-4 px-4 mb-2 col-12 d-flex align-items-center justify-content-center gap-2 obj">
             <img src="<?php echo PICTURES_DIR.'Primo/1.png'; ?>" alt="Primo's profile picture" class="profile-picture col-4">
             <button type="button" class="profile-picture template-image-missing col-4"><i class="fi fi-br-add"></i></button>
             <button type="button" class="profile-picture template-image-missing col-4"><i class="fi fi-br-add"></i></button>

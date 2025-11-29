@@ -1,5 +1,5 @@
-.image-container {
-    height: 85%;
+.container {
+    height: 70vh;
 }
 
 .image-container img {
@@ -37,9 +37,9 @@ span.study-plan {
 }
 
 div button {
-    border-radius: 50%;
-    width: 4.75rem;
-    height: 4.75rem;
+    border-radius: 100%;
+    width: clamp(3.5rem, 18vw, 4.5rem);
+    height: clamp(3.5rem, 18vw, 4.5rem);
     border: none;
 }
 
