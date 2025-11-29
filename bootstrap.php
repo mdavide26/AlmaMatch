@@ -10,7 +10,7 @@
     define("ICONS_MENU", [
         ['href' => PROJECT_DIR, 'icon' => 'fi-br-house-chimney', 'page' => 'home'],
         ['href' => PROJECT_DIR."explorer", 'icon' => 'fi-br-navigation', 'page' => 'explorer'],
-        ['href' => '#', 'icon' => 'fi-br-bolt', 'page' => 'matches'],
+        ['href' => PROJECT_DIR.'likes', 'icon' => 'fi-br-bolt', 'page' => 'likes'],
         ['href' => '#', 'icon' => 'fi-bs-comment', 'page' => 'messages'],
         ['href' => PROJECT_DIR."profile", 'icon' => 'fi-bs-user', 'page' => 'profile']
     ]);
