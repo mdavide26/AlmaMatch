@@ -23,6 +23,10 @@ main {
     height: calc(15vh + var(--safe-area-inset-top)); /* Adatta 56px all'altezza originale del tuo header */
 }
 
+.mobile-header, .icons-menu {
+    background-color: var(--bs-body-bg);
+}
+
 .mobile-header h1 {
     font-family: 'Alfa Slab One';
     letter-spacing: 0.7px;
@@ -37,30 +41,18 @@ footer a {
 }
 
 .icons-menu {
-    /* Aggiungi padding in basso per non finire sotto la home bar */
     padding-bottom: var(--safe-area-inset-bottom);
-    /* Potrebbe essere necessario aumentare l'altezza per compensare il padding */
-    height: calc(5rem + var(--safe-area-inset-bottom)); /* Adatta 5rem all'altezza originale del tuo footer */
+    height: calc(5rem + var(--safe-area-inset-bottom));
 }
 
 /* LIGHT THEME */
 [data-bs-theme="light" i] body {
-    background-color: #e9ecef;
+    --bs-body-bg: #e9ecef;
     color: #212529;
-}
-
-[data-bs-theme="dark" i] .mobile-header,
-[data-bs-theme="dark" i] .icons-menu {
-    background-color: #e9ecef;
 }
 
 /* DARK THEME */
 [data-bs-theme="dark" i] body {
-    background-color: #000000;
+    --bs-body-bg: #000000;
     color: #f8f9fa;
-}
-
-[data-bs-theme="dark" i] .mobile-header,
-[data-bs-theme="dark" i] .icons-menu {
-    background-color: #000000;
 }
