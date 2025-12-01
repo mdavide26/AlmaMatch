@@ -1,4 +1,4 @@
-<div class="w-100">
+<div class="w-100 overflow-y-auto">
     <div class="profile-pictures">
         <header>
             <span class="ps-3">Profile pictures</span>

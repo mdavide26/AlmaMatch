@@ -49,8 +49,18 @@ footer a {
     color: #212529;
 }
 
+[data-bs-theme="dark" i] .mobile-header,
+[data-bs-theme="dark" i] .icons-menu {
+    background-color: #e9ecef;
+}
+
 /* DARK THEME */
 [data-bs-theme="dark" i] body {
     background-color: #000000;
     color: #f8f9fa;
+}
+
+[data-bs-theme="dark" i] .mobile-header,
+[data-bs-theme="dark" i] .icons-menu {
+    background-color: #000000;
 }

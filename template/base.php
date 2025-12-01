@@ -18,19 +18,19 @@
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR; ?>js/base.js"></script>
 </head>
-<body class="container-fluid p-0 overflow-hidden">
+<body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
     <div class="d-none d-md-block">
         <h2>Desktop Content</h2>
     </div>
 
     <!-- Content visible for Mobile -->
-    <div class="d-block d-md-none d-flex flex-column min-vh-100">
+    <div class="d-block d-md-none d-flex flex-column vh-100">
         <header class="mobile-header d-flex align-items-center fixed-top">
             <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="AlmaMatch Icon">
             <h1 class="Alma">Alma</h1><h1 class="Match">Match</h1>
         </header>
-        <main class="flex-grow-1 d-flex flex-column">
+        <main class="flex-grow-1 d-flex flex-column overflow-y-auto">
             <?php
                 require($templateParams["name"]);
             ?>
