@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
-    <script src="<?php echo PROJECT_DIR; ?>js/base.js"></script>
+    <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
 </head>
 <body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
