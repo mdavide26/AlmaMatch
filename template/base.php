@@ -15,6 +15,9 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
+    <?php if (isset($templateParams["name"]) && ($templateParams["name"] == "login.php" || $templateParams["name"] == "register.php")): ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
+    <?php endif; ?>
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
 </head>

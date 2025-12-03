@@ -16,7 +16,7 @@
 }
 
 .image-container span {
-    font-family: "Alexandria", sans-serif;
+    font-family: var(--family-font);
     color: white;
     text-shadow: 
         -1px -1px 0 #000,  

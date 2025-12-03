@@ -1,14 +1,24 @@
 <?php
     require_once("bootstrap.php");
 
-    $_SESSION["user"] = $_SESSION["user"] ?? null;
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"]) && isset($_POST["password"])) {
+        // TODO: Implement authentication logic here
+        // For now, set the session user to a placeholder value
+        $_SESSION["email"] = $_POST["email"];
+        header("Location: " . PROJECT_DIR);
+        exit();
+    }
 
-    if (!$_SESSION["user"] ?? false) {
-        $templateParams["name"] = "login.php";
-        $templateParams["title"] = "Login";
-    } else {
+    if (isset($_SESSION["email"])) {
+        if (isset($_GET["page"]) && $_GET["page"] == "register") {
+            header("Location: ".PROJECT_DIR);
+            exit();
+        }
         $templateParams["name"] = "home.php";
         $templateParams["title"] = "Home";
+    } else {
+        header("Location: ".PROJECT_DIR."auth");
+        exit();
     }
 
     require("template/base.php");

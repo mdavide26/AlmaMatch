@@ -1,0 +1,92 @@
+form {
+    position: relative;
+    overflow: hidden;
+}
+
+form > * {
+    position: relative;
+    z-index: 1;
+}
+
+form::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    background: linear-gradient(90deg, rgba(255,106,0,0.12), rgba(255,127,42,0.06));
+    filter: blur(10px);
+    z-index:0;
+}
+
+.icon-logo {
+    font-size: 1.5rem;
+    background-color: #ff6a00;
+    border-radius: 1rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.title {
+    font-family: var(--family-font);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+}
+
+.subtitle {
+    font-family: var(--family-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.03rem;
+    color: #b8b8b8;
+}
+
+.input-title {
+    font-family: var(--family-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+    color: #b8b8b8;
+}
+
+.input-group {
+    border-radius: 1rem;
+    border: 1px solid #353535;
+    background: rgba(255, 255, 255, 0.05);
+    font-family: var(--family-font);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.input-field {
+    background: transparent;
+    border: none;
+}
+
+.input-field:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.password-toggle-btn {
+    background: transparent;
+    border: none;
+    color: #b8b8b8;
+}
+
+a {
+    color: #ff6a00;
+    font-family: var(--family-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
+
+.login-btn {
+    font-family: var(--family-font);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    background: #ff6a00;
+    border-radius: 0.8rem;
+    color: rgb(0, 0, 0);
+}

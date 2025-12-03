@@ -5,11 +5,19 @@
                 <i class="fi fi-sr-user-lock"></i>
             </div>
             <div>
-                <header class="title ">Login</header>
-                <footer class="subtitle">Welcome - Insert your credentials below</footer>
+                <header class="title ">Create Account</header>
+                <footer class="subtitle">Hello - please fill in the details below</footer>
             </div>
         </div>
         <div class="credential-container d-flex flex-column w-100 px-4 gap-2">
+            <div class="d-flex flex-column">
+                <span class="input-title">Username</span>
+                <div class="input-group d-flex flex-row align-items-center gap-3 py-2 px-3">
+                    <i class="fi fi-sr-user"></i>
+                    <input type="text" name="username" class="input-field" placeholder="yourusername" required>
+                </div>
+            </div>
+
             <div class="d-flex flex-column">
                 <span class="input-title">Email</span>
                 <div class="input-group d-flex flex-row align-items-center gap-3 py-2 px-3">
@@ -28,13 +36,24 @@
                     </button>
                 </div>
             </div>
+
+            <div class="d-flex flex-column">
+                <span class="input-title">Confirm Password</span>
+                <div class="input-group d-flex flex-row align-items-center gap-3 py-2 px-3">
+                    <i class="fi fi-sr-key"></i>
+                    <input type="password" name="confirm_password" class="input-field" placeholder="••••••••" required>
+                    <button type="button" class="password-toggle-btn ms-auto">
+                        <i class="fi fi-br-eye"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="d-flex flex-row justify-content-center w-100 justify-content-around py-3">
-            <a href="<?php echo PROJECT_DIR."auth/?page=register"; ?>" class="text-decoration-none">Create Account</a>
-            <a href="#" class="text-decoration-none">Forgot Password?</a>
+        <div class="d-flex flex-row justify-content-end w-100 py-3 px-5">
+            <a href="<?php echo PROJECT_DIR."auth"; ?>" class="text-decoration-none">Login</a>
         </div>
+
         <div class="d-flex flex-column w-100 px-4">
-            <button type="submit" class="btn login-btn w-100">Login</button>
+            <button type="submit" class="btn login-btn w-100">Register</button>
         </div>
     </form>
 </div>
