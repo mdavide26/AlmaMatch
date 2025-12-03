@@ -10,10 +10,6 @@
     }
 
     if (isset($_SESSION["email"])) {
-        if (isset($_GET["page"]) && $_GET["page"] == "register") {
-            header("Location: ".PROJECT_DIR);
-            exit();
-        }
         $templateParams["name"] = "home.php";
         $templateParams["title"] = "Home";
     } else {
