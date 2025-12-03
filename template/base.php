@@ -38,23 +38,19 @@
                 require($templateParams["name"]);
             ?>
         </main>
-        <?php
-            if ($templateParams["name"] != "login.php"):
-        ?>
+        <?php if ($templateParams["name"] != "login.php"): ?>
         <footer class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
             <?php 
-                foreach(ICONS_MENU as $icon) {
-                    if ($icon['page'] === basename($templateParams["name"], ".php")) {
-                        echo '<a href="'.$icon['href'].'" class="text-decoration-none" style="color: #DF693E;"><i class="'.$icon['icon'].'"></i></a>';
-                    } else {
-                        echo '<a href="'.$icon['href'].'" class="text-decoration-none text-secondary"><i class="'.$icon['icon'].'"></i></a>';
-                    }
-                }
+                foreach(ICONS_MENU as $icon):
+                    if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                    <?php else: ?>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                    <?php endif;
+                endforeach;
             ?>
         </footer>
-        <?php
-            endif;
-        ?>
+        <?php endif; ?>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
