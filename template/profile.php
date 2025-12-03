@@ -1,4 +1,4 @@
-<div class="w-100 overflow-y-auto">
+<div class="w-100 overflow-y-auto d-flex flex-column gap-3">
     <div class="profile-pictures">
         <header>
             <span class="ps-3">Profile pictures</span>
@@ -9,7 +9,7 @@
             <button type="button" class="profile-picture template-image-missing col-4"><i class="fi fi-br-add"></i></button>
         </div>
     </div>
-    <div class="profile-info py-2 px-0">
+    <div class="profile-info px-0">
         <header class="pb-2">
             <span class="ps-3">Study Plan</span>
         </header>
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="profile-info py-2 px-0">
+    <div class="profile-info px-0">
         <header class="pb-2">
             <span class="ps-3">Searching Partners</span>
         </header>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="profile-info py-2 px-0">
+    <div class="profile-info px-0">
         <header class="pb-2">
             <span class="ps-3">Communication Style</span>
         </header>
@@ -48,5 +48,7 @@
             </div>
         </div>
     </div>
+    <a href="<?php echo PROJECT_DIR."logout"; ?>" class="btn logout-btn btn-danger w-100">Logout</a>
+    <a href="#" class="btn delete-account-btn btn-danger w-100 mt-5 mb-4">Delete Account</a>
 </div>
 
