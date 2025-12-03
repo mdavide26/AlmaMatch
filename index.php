@@ -13,7 +13,7 @@
         $templateParams["name"] = "home.php";
         $templateParams["title"] = "Home";
     } else {
-        header("Location: ".PROJECT_DIR."auth");
+        header("Location: ".PROJECT_DIR."auth/");
         exit();
     }
 

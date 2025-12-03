@@ -3,11 +3,11 @@
     --safe-area-inset-right: env(safe-area-inset-right, 0px);
     --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
     --safe-area-inset-left: env(safe-area-inset-left, 0px);
+    --title-font: 'Alfa Slab One';
     --family-font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 body {
-    /* Aggiungi padding per rispettare la safe area sui lati */
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);
 }
@@ -18,10 +18,8 @@ main {
 }
 
 .mobile-header {
-    /* Aggiungi padding in alto per non finire sotto il notch */
     padding-top: var(--safe-area-inset-top);
-    /* Potrebbe essere necessario aumentare l'altezza per compensare il padding */
-    height: calc(15vh + var(--safe-area-inset-top)); /* Adatta 56px all'altezza originale del tuo header */
+    height: calc(15vh + var(--safe-area-inset-top));
 }
 
 .mobile-header, .icons-menu {
@@ -29,7 +27,7 @@ main {
 }
 
 .mobile-header h1 {
-    font-family: 'Alfa Slab One';
+    font-family: var(--title-font);
     letter-spacing: 0.7px;
 }
 

@@ -14,9 +14,12 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
-    <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
-    <?php if (isset($templateParams["name"]) && ($templateParams["name"] == "login.php" || $templateParams["name"] == "register.php")): ?>
+    <?php if (isset($templateParams["name"]) && ($templateParams["name"] == "login.php" 
+            || $templateParams["name"] == "register.php"
+            || $templateParams["name"] == "forgot-password.php")): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
+    <?php else: ?>
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
     <?php endif; ?>
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
@@ -30,7 +33,7 @@
     <!-- Content visible for Mobile -->
     <div class="d-block d-md-none d-flex flex-column vh-100">
         <header class="mobile-header d-flex align-items-center fixed-top">
-            <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="AlmaMatch Icon">
+            <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="That image contains the logo of AlmaMatch app, 4 people teaming up for a common goal.">
             <h1 class="Alma">Alma</h1><h1 class="Match">Match</h1>
         </header>
         <main class="flex-grow-1 d-flex flex-column overflow-y-auto">
@@ -38,7 +41,7 @@
                 require($templateParams["name"]);
             ?>
         </main>
-        <?php if ($templateParams["name"] != "login.php"): ?>
+        <?php if ($templateParams["name"] != "login.php" && $templateParams["name"] != "register.php"): ?>
         <footer class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
             <?php 
                 foreach(ICONS_MENU as $icon):

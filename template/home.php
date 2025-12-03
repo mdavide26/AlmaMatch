@@ -1,6 +1,6 @@
 <div class="container container-fluid d-flex flex-column align-items-center flex-grow-1">
     <figure class="image-container w-100 position-relative h-100">
-        <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="card-img h-100 w-100" alt="First Picture of Primo" style="object-fit: cover;">
+        <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="card-img h-100 w-100" alt="That image shows Primo, a 27-year-old individual, smiling and looking confident.">
         <i class="fi fi-bs-arrow-circle-left position-absolute top-50 start-0 translate-middle-y ps-3"></i>
         <i class="fi fi-bs-arrow-circle-right position-absolute top-50 end-0 translate-middle-y pe-3"></i>
         <i class="fi fi-bs-arrow-circle-up position-absolute bottom-0 end-0 mb-3 me-4"></i>
