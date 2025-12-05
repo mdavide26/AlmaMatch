@@ -37,7 +37,6 @@ form::before{
     font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.03rem;
-    color: #b8b8b8;
 }
 
 .input-title {
@@ -45,7 +44,6 @@ form::before{
     font-size: 0.8rem;
     font-weight: 400;
     margin-bottom: 0.2rem;
-    color: #b8b8b8;
 }
 
 .input-group {
@@ -70,7 +68,6 @@ form::before{
 .password-toggle-btn {
     background: transparent;
     border: none;
-    color: #b8b8b8;
 }
 
 a {
@@ -88,5 +85,44 @@ a {
     letter-spacing: 0.05rem;
     background: #ff6a00;
     border-radius: 0.8rem;
+}
+
+/***************/
+/* LIGHT THEME */
+/***************/
+
+[data-bs-theme="light" i] .subtitle {
+    color: #757575;
+}
+
+[data-bs-theme="light" i] .input-title {
+    color: #757575;
+}
+
+[data-bs-theme="light" i] .login-btn {
+    color: rgb(255, 255, 255);
+}
+
+[data-bs-theme="light" i] .password-toggle-btn {
+    color: #757575;
+}
+
+/**************/
+/* DARK THEME */
+/**************/
+
+[data-bs-theme="dark" i] .subtitle {
+    color: #b8b8b8;
+}
+
+[data-bs-theme="dark" i] .input-title {
+    color: #b8b8b8;
+}
+
+[data-bs-theme="dark" i] .login-btn {
     color: rgb(0, 0, 0);
+}
+
+[data-bs-theme="dark" i] .password-toggle-btn {
+    color: #b8b8b8;
 }
