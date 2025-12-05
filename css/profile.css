@@ -1,5 +1,5 @@
 header span {
-    font-family: "Alexandria", sans-serif;
+    font-family: var(--family-font);
     font-size: 1.35rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
@@ -20,7 +20,7 @@ header span {
 }
 
 .info-label {
-    font-family: "Alexandria", sans-serif;
+    font-family: var(--family-font);
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.03rem;
@@ -37,27 +37,27 @@ header span {
 /* LIGHT THEME */
 /***************/
 
-[data-bs-theme="light"] header span {
+[data-bs-theme="light" i] header span {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-[data-bs-theme="light"] .profile-picture {
+[data-bs-theme="light" i] .profile-picture {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-[data-bs-theme="light"] .template-image-missing {
+[data-bs-theme="light" i] .template-image-missing {
     background-color: #FF9169;
 }
 
-[data-bs-theme="light"] .pictures-container i {
+[data-bs-theme="light" i] .pictures-container i {
     color: #631B00;
 }
 
-[data-bs-theme="light"] .info-label {
+[data-bs-theme="light" i] .info-label {
     background-color: #FF9169;
 }
 
-[data-bs-theme="light"] .info-label i {
+[data-bs-theme="light" i] .info-label i {
     color: #631B00;
 }
 
@@ -66,18 +66,18 @@ header span {
 /* DARK THEME */
 /**************/
 
-[data-bs-theme="dark"] .template-image-missing {
+[data-bs-theme="dark" i] .template-image-missing {
     background-color: #2B1810;
 }
 
-[data-bs-theme="dark"] .pictures-container i {
+[data-bs-theme="dark" i] .pictures-container i {
     color: #DF693E;
 }
 
-[data-bs-theme="dark"] .info-label {
+[data-bs-theme="dark" i] .info-label {
     background-color: #2B1810;
 }
 
-[data-bs-theme="dark"] .info-label i {
+[data-bs-theme="dark" i] .info-label i {
     color: #DF693E;
 }

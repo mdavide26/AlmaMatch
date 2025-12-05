@@ -1,4 +1,8 @@
 <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
     require_once("db/database.php");
     
     // Start the session
@@ -12,6 +16,6 @@
         ['href' => PROJECT_DIR."explorer", 'icon' => 'fi-br-navigation', 'page' => 'explorer'],
         ['href' => PROJECT_DIR.'likes', 'icon' => 'fi-br-bolt', 'page' => 'likes'],
         ['href' => '#', 'icon' => 'fi-bs-comment', 'page' => 'messages'],
-        ['href' => PROJECT_DIR."profile", 'icon' => 'fi-bs-user', 'page' => 'profile']
+        ['href' => PROJECT_DIR."profile/", 'icon' => 'fi-bs-user', 'page' => 'profile']
     ]);
 ?>
