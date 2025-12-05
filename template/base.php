@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
     <?php if (isset($authPage) && $authPage): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
+    <?php elseif (isset($templateParams["name"]) && $templateParams["name"] == "explorer-category.php"): ?>
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/home.css"; ?>">
     <?php else: ?>
         <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
     <?php endif; ?>
@@ -42,11 +44,24 @@
         <?php if ($templateParams["name"] != "login.php" && $templateParams["name"] != "register.php"): ?>
         <footer class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
             <?php 
+                $currentPage = basename($templateParams["name"], ".php");
+
                 foreach(ICONS_MENU as $icon):
-                    if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
-                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                    $activePages = [];
+                    if ($icon['page'] === 'explorer') {
+                        $activePages = ['explorer', 'explorer-category'];
+                    } else {
+                        $activePages = [$icon['page']];
+                    }
+                
+                    if (in_array($currentPage, $activePages)): ?>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;">
+                            <i class="<?php echo $icon['icon']; ?>"></i>
+                        </a>
                     <?php else: ?>
-                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary">
+                            <i class="<?php echo $icon['icon']; ?>"></i>
+                        </a>
                     <?php endif;
                 endforeach;
             ?>
