@@ -2,18 +2,13 @@
     aspect-ratio: 4/3;
     display: flex;
     flex-direction: column;
+    border-radius: 2rem;
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 3rem;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .card:focus {
@@ -21,7 +16,7 @@
     outline-offset: 5px;
 }
 
-.card figcaption {
+.card span {
     font-family: "Alexandria", sans-serif;
     color: white;
     text-shadow: 
@@ -32,9 +27,25 @@
          2px 3px 5px rgb(0, 0, 0);
 }
 
-figcaption.image-caption {
-    font-size: clamp(1rem, 2vw, 1.75rem);
+span.image-caption {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
     font-weight: 700;
+}
+
+@media (max-width: 430px) {
+  .cs-caption {
+    visibility: hidden;   /* Nasconde completamente il contenuto */
+    position: relative;
+  }
+
+  .cs-caption::after {
+    content: attr(data-short);
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 }
 
 .card.biomedic { background:#AC7F5E; }

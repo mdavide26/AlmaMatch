@@ -3,21 +3,7 @@
 }
 
 .tabs {
-    display: inline-flex;         
-    align-items: center;
-    justify-content: center;
-
-    gap: 20px;
-
-    position: relative;
-    left: 46%;
-    transform: translateX(-50%);   
-    
-    margin-bottom: 15px;
     font-size: 1.1rem;
-
-    
-    padding: 0;
 }
 
 .tab {
