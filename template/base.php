@@ -41,7 +41,7 @@
                 require($templateParams["name"]);
             ?>
         </main>
-        <?php if ($templateParams["name"] != "login.php" && $templateParams["name"] != "register.php"): ?>
+        <?php if (!isset($authPage) || !$authPage): ?>
         <footer class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
             <?php 
                 $currentPage = basename($templateParams["name"], ".php");
