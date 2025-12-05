@@ -14,9 +14,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
-    <?php if (isset($templateParams["name"]) && ($templateParams["name"] == "login.php" 
-            || $templateParams["name"] == "register.php"
-            || $templateParams["name"] == "forgot-password.php")): ?>
+    <?php if (isset($authPage) && $authPage): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
     <?php else: ?>
         <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
@@ -55,7 +53,9 @@
         </footer>
         <?php endif; ?>
     </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <?php if(isset($authPage) && $authPage): ?>
+        <script src="<?php echo PROJECT_DIR."js/auth.js"; ?>"></script>
+    <?php endif; ?>
 </body>
 </html>

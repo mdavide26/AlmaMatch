@@ -17,7 +17,6 @@
                     <input type="text" name="email" class="input-field" placeholder="you@example.com" required>
                 </div>
             </div>
-
             <div class="d-flex flex-column">
                 <span class="input-title">Password</span>
                 <div class="input-group d-flex flex-row align-items-center gap-3 py-2 px-3">
