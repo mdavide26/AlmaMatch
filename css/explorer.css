@@ -34,7 +34,7 @@ span.image-caption {
 
 @media (max-width: 430px) {
   .cs-caption {
-    visibility: hidden;   /* Nasconde completamente il contenuto */
+    visibility: hidden;   
     position: relative;
   }
 

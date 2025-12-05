@@ -1,5 +1,5 @@
 <div class="almamatch-container">
-    <div class="tabs d-flex justify-content-center align-items-center mb-3 flex-row gap-2">
+    <div class="tabs d-flex justify-content-center align-items-center mb-3 flex-row gap-2 pb-1">
         <span class="tab active w-50">Likes Received</span>
         <span class="divider">|</span>
         <span class="tab w-50">Likes Sent</span>
