@@ -27,11 +27,11 @@
     <div class="d-none d-md-flex row p-0 vh-100">
         <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start">
             <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center justify-content-between">
-                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="h-75 mx-3 px-2 d-flex align-items-center gap-2 text-decoration-none">
+                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 mx-3 px-2 d-flex align-items-center gap-2 text-decoration-none">
                     <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
                     <span>You</span>
                 </a>
-                <div class="desktop-icons px-3 d-flex flex-row justify-content-end align-items-center gap-4 w-75">
+                <div class="desktop-icons px-3 d-flex flex-row justify-content-end align-items-center gap-3">
                     <?php 
                         foreach(DESKTOP_ICONS_MENU as $icon):
                             if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
