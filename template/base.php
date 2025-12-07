@@ -25,7 +25,7 @@
 <body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
     <div class="d-none d-md-block">
-        <h2>Desktop Content</h2>
+        
     </div>
 
     <!-- Content visible for Mobile -->
@@ -54,8 +54,10 @@
         <?php endif; ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <?php if(isset($authPage) && $authPage): ?>
+    <?php if (isset($authPage) && $authPage): ?>
         <script src="<?php echo PROJECT_DIR."js/auth.js"; ?>"></script>
+    <?php else: ?>
+        <script src="<?php echo PROJECT_DIR."js/".basename($templateParams["name"], ".php").".js"; ?>"></script>
     <?php endif; ?>
 </body>
 </html>
