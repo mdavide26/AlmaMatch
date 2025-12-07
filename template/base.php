@@ -24,12 +24,37 @@
 </head>
 <body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
-    <div class="d-none d-md-block">
-        
+    <div class="d-none d-md-flex row p-0 vh-100">
+        <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start">
+            <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center justify-content-between">
+                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="h-75 mx-3 px-2 d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
+                    <span>You</span>
+                </a>
+                <div class="desktop-icons px-3 d-flex flex-row justify-content-end align-items-center gap-4 w-75">
+                    <?php 
+                        foreach(DESKTOP_ICONS_MENU as $icon):
+                            if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
+                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
+                            <?php else: ?>
+                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
+                            <?php endif;
+                        endforeach;
+                    ?>
+                </div>
+            </nav>
+        </aside>
+        <div class="col-md-1 col-lg-2 col-xl-3"></div>
+        <main class="col-md-6 col-lg-5 col-xl-3">
+            <?php
+                require($mainDesktopPage);
+            ?>
+        </main>
+        <div class="col-md-1 col-lg-2 col-xl-3"></div>
     </div>
 
     <!-- Content visible for Mobile -->
-    <div class="d-block d-md-none d-flex flex-column vh-100">
+    <div class="d-flex d-md-none d-flex flex-column vh-100">
         <header class="mobile-header d-flex align-items-center fixed-top">
             <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="That image contains the logo of AlmaMatch app, 4 people teaming up for a common goal.">
             <h1 class="Alma">Alma</h1><h1 class="Match">Match</h1>
@@ -40,9 +65,9 @@
             ?>
         </main>
         <?php if ($templateParams["name"] != "login.php" && $templateParams["name"] != "register.php"): ?>
-        <footer class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
+        <nav class="icons-menu d-flex justify-content-center align-items-center py-3 gap-5 fixed-bottom">
             <?php 
-                foreach(ICONS_MENU as $icon):
+                foreach(MOBILE_ICONS_MENU as $icon):
                     if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
                         <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?>"></i></a>
                     <?php else: ?>
@@ -50,7 +75,7 @@
                     <?php endif;
                 endforeach;
             ?>
-        </footer>
+        </nav>
         <?php endif; ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

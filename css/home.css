@@ -36,11 +36,15 @@ span.study-plan {
     font-weight: 300;
 }
 
+
 div button {
     border-radius: 100%;
-    width: clamp(3.5rem, 18vw, 4.5rem);
-    height: clamp(3.5rem, 18vw, 4.5rem);
+    width: clamp(5vw, 15vw, 20vw);
+    height: clamp(5vw, 15vw, 20vw);
     border: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .refresh-icon {
@@ -63,6 +67,12 @@ div button {
 
 .send-icon {
     color: #0088FF;
+}
+
+div button i, div button svg {
+    font-size: 5vw;
+    width: 50%;
+    height: 50%;
 }
 
 /***************/
@@ -101,4 +111,15 @@ div button {
 [data-bs-theme="dark" i] div button {
     background-color: #1E1E1E;
     box-shadow: 0 4px 12px rgb(22, 22, 22);
+}
+
+@media (min-width: 768px) {
+    div button {
+        width: clamp(5vh, 7vh, 10vh);
+        height: clamp(5vh, 7vh, 10vh);
+    }
+
+    div button i, div button svg {
+        font-size: 2.5vh;
+    }
 }

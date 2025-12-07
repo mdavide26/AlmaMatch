@@ -1,6 +1,8 @@
 <?php
     require_once("bootstrap.php");
 
+    $mainDesktopPage = "home.php";
+
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"]) && isset($_POST["password"])) {
         // TODO: Implement authentication logic here
         // For now, set the session user to a placeholder value
