@@ -22,6 +22,6 @@
         ['href' => PROJECT_DIR, 'icon' => 'fi-br-house-chimney', 'page' => 'home'],
         ['href' => PROJECT_DIR."explorer/", 'icon' => 'fi-br-navigation', 'page' => 'explorer'],
         ['href' => '#', 'icon' => 'fi-br-bolt', 'page' => 'likes'],
-        ['href' => '#', 'icon' => 'fi-bs-user', 'page' => 'report']
+        ['href' => '#', 'icon' => 'fi fi-sr-flag-alt', 'page' => 'report']
     ])
 ?>

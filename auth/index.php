@@ -27,5 +27,7 @@
             exit();
     }
 
+    $mainDesktopPage = "../template/home.php";
+    
     require("../template/base.php");
 ?>
