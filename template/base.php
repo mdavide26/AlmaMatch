@@ -24,20 +24,20 @@
 </head>
 <body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
-    <div class="d-none d-md-flex row p-0 vh-100">
+    <div class="d-none d-md-flex row p-0 vh-100" role="desktop-content">
         <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start">
             <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center justify-content-between">
-                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 mx-3 px-2 d-flex align-items-center gap-2 text-decoration-none">
+                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 mx-3 px-2 d-flex align-items-center gap-2 text-decoration-none" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
                     <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
                     <span>You</span>
                 </a>
-                <div class="desktop-icons px-3 d-flex flex-row justify-content-end align-items-center gap-3">
+                <div class="desktop-icons px-3 d-flex flex-row justify-content-end align-items-center gap-3" role="desktop-icons-menu">
                     <?php 
                         foreach(DESKTOP_ICONS_MENU as $icon):
                             if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
-                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
+                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
                             <?php else: ?>
-                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
+                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>"><i class="<?php echo $icon['icon']; ?> fs-5"></i></a>
                             <?php endif;
                         endforeach;
                     ?>
@@ -54,8 +54,8 @@
     </div>
 
     <!-- Content visible for Mobile -->
-    <div class="d-flex d-md-none d-flex flex-column vh-100">
-        <header class="mobile-header d-flex align-items-center fixed-top">
+    <div class="d-flex d-md-none d-flex flex-column vh-100" role="mobile-content">
+        <header class="mobile-header d-flex align-items-center fixed-top" role="banner">
             <img src="<?php echo UPLOAD_DIR."icons/almamatch.png" ?>" class="h-100" alt="That image contains the logo of AlmaMatch app, 4 people teaming up for a common goal.">
             <h1 class="Alma">Alma</h1><h1 class="Match">Match</h1>
         </header>
@@ -69,9 +69,9 @@
             <?php 
                 foreach(MOBILE_ICONS_MENU as $icon):
                     if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
-                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?>"></i></a>
                     <?php else: ?>
-                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary"><i class="<?php echo $icon['icon']; ?>"></i></a>
+                        <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>"><i class="<?php echo $icon['icon']; ?>"></i></a>
                     <?php endif;
                 endforeach;
             ?>
