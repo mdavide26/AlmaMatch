@@ -83,8 +83,8 @@ aside {
 }
 
 .desktop-icons a {
-    height: 5vh;
-    width: 5vh;
+    height: clamp(3.25vh, 3.5vw, 5vh);
+    width: clamp(3.25vh, 3.5vw, 5vh);
     justify-content: center;
     align-items: center;
     display: flex;
@@ -93,6 +93,24 @@ aside {
 
 .desktop-icons a:hover i {
     color: rgba(255, 92, 33, 0.7);
+}
+
+.desktop-sidebar-content header a {
+    font-family: var(--family-font);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.005rem;
+}
+
+.desktop-sidebar-content header span {
+    font-family: var(--family-font);
+    font-weight: 900;
+    color: #6d6d6d;
+    user-select: none;
+}
+
+.desktop-sidebar-content header a.selected {
+    border-bottom: 0.25rem solid #DF693E;
 }
 
 /* LIGHT THEME */
