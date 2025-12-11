@@ -1,0 +1,15 @@
+.matches-container img {
+    height: 10vw;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.image-container img {
+    width: 25vw;
+}
+
+@media (max-width: 768px) {
+    .matches-container {
+        height: 17vh;
+    }
+}

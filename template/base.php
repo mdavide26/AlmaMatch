@@ -18,6 +18,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
     <?php else: ?>
         <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/messages.css"; ?>">
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/matches.css"; ?>">
     <?php endif; ?>
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
@@ -45,15 +47,15 @@
             </nav>
             <div class="desktop-sidebar-content w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-start">
                 <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
-                    <a class="text-decoration-none <?php echo ($desktopsidepage === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=matches"; ?>">Matches</a>
+                    <a class="text-decoration-none <?php echo ($desktopSidePage === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=matches"; ?>">Matches</a>
                     <span>|</span>
-                    <a class="text-decoration-none <?php echo ($desktopsidepage === "directs") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=directs"; ?>">Messages</a>
+                    <a class="text-decoration-none <?php echo ($desktopSidePage === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=messages"; ?>">Messages</a>
                 </header>
-                <div class="flex-grow-1 w-100 overflow-y-auto" role="sidebar-main-content">
+                <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
                     <?php
-                        switch ($desktopsidepage) {
-                            case "directs":
-                                require("directs.php");
+                        switch ($desktopSidePage) {
+                            case "messages":
+                                require("messages.php");
                                 break;
                             case "matches":
                             default:
