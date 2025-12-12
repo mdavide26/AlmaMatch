@@ -1,15 +1,17 @@
-.matches-container img {
-    height: 10vw;
-    object-fit: cover;
-    border-radius: 2rem;
-}
-
 .image-container img {
-    width: 25vw;
+    object-fit: cover;
+    border-radius: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .matches-container {
-        height: 17vh;
+@media (max-width: 767px) {
+    .image-container img {
+        height: 25vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .image-container img {
+        height: 15vh;
+        width: 100%;
     }
 }

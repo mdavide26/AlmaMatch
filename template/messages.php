@@ -5,8 +5,8 @@
 <div class="d-flex d-md-none">
     <header>
         <span>Matches</span>
-        <div class="overflow-x-visible d-flex flex-row px-2" role="sidebar-links">
-            <?php require("matches.php") ?>
+        <div class="overflow-x-auto px-2" role="sidebar-links">
+            <?php require("matches.php"); ?>
         </div>
     </header>
 </div>
