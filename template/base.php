@@ -53,9 +53,9 @@
             <div class="desktop-sidebar-content w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-start">
                 <?php if ($templateParams["name"] == "home.php"): ?>
                 <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
-                    <a class="text-decoration-none <?php echo ($desktopSidePage === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=matches"; ?>">Matches</a>
+                    <a class="text-decoration-none <?php echo ($desktopSidePage === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."matches/"; ?>">Matches</a>
                     <span>|</span>
-                    <a class="text-decoration-none <?php echo ($desktopSidePage === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=messages"; ?>">Messages</a>
+                    <a class="text-decoration-none <?php echo ($desktopSidePage === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
                 </header>
                 <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
                     <?php
