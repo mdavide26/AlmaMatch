@@ -16,10 +16,15 @@
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
     <?php if (isset($authPage) && $authPage): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
+
     <?php else: ?>
         <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
-        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/messages.css"; ?>">
-        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/matches.css"; ?>">
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/home.css"; ?>">
+        
+        <?php if ($templateParams["name"] == "home.php"): ?>
+            <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/matches.css"; ?>">
+        <?php endif; ?>
+        
     <?php endif; ?>
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
@@ -46,6 +51,7 @@
                 </div>
             </nav>
             <div class="desktop-sidebar-content w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-start">
+                <?php if ($templateParams["name"] == "home.php"): ?>
                 <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
                     <a class="text-decoration-none <?php echo ($desktopSidePage === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."?page=matches"; ?>">Matches</a>
                     <span>|</span>
@@ -64,6 +70,13 @@
                         }
                     ?>
                 </div>
+                <?php else: ?>
+                <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
+                    <?php
+                        require($desktopSidePage);
+                    ?>
+                </div>
+                <?php endif; ?>
             </div>
         </aside>
         <div class="col-md-1 col-lg-2 col-xl-3"></div>
@@ -104,7 +117,9 @@
     <?php if (isset($authPage) && $authPage): ?>
         <script src="<?php echo PROJECT_DIR."js/auth.js"; ?>"></script>
     <?php else: ?>
-        <script src="<?php echo PROJECT_DIR."js/".basename($templateParams["name"], ".php").".js"; ?>"></script>
+        <?php if (file_exists(PROJECT_DIR."js/".basename($templateParams["name"], ".php").".js")): ?>
+            <script src="<?php echo PROJECT_DIR."js/".basename($templateParams["name"], ".php").".js"; ?>"></script>
+        <?php endif; ?>
     <?php endif; ?>
 </body>
 </html>
