@@ -1,16 +1,12 @@
-.image-container img {
-    object-fit: cover;
-    border-radius: 1.5rem;
-}
-
 @media (max-width: 767px) {
     .image-container img {
-        height: 25vw;
+        height: 33vw;
+        width: 27vw;
     }
 }
 
 @media (min-width: 768px) {
-    .image-container img {
+    aside .image-container img {
         height: 15vh;
         width: 100%;
     }

@@ -18,10 +18,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
 
     <?php else: ?>
-        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
         <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/home.css"; ?>">
+        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
         
-        <?php if ($templateParams["name"] == "home.php"): ?>
+        <?php if ($templateParams["name"] == "home.php" || $templateParams["name"] == "messages.php"): ?>
             <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/matches.css"; ?>">
         <?php endif; ?>
         
@@ -55,7 +55,7 @@
                         || $templateParams["name"] == "messages.php" 
                         || $templateParams["name"] == "matches.php"): ?>
                     <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
-                        <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."matches/"; ?>">Matches</a>
+                        <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR; ?>">Matches</a>
                         <span>|</span>
                         <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
                     </header>
