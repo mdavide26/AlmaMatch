@@ -1,10 +1,15 @@
 <?php
     require_once("../bootstrap.php");
 
-    $templateParams["name"] = "messages.php";
-    $templateParams["title"] = "Messages";
-
-    $mainDesktopPage = "../template/home.php";
+    if (isset($_SESSION["email"])) {
+        $templateParams["name"] = "messages.php";
+        $templateParams["title"] = "Messages";
+        $templateParams["desktop"]["main"] = "../template/home.php";
+        $templateParams["desktop"]["side"] = $templateParams["name"];
+    } else {
+        header("Location: ".PROJECT_DIR."auth/");
+        exit();
+    }
 
     require("../template/base.php");
 ?>

@@ -3,7 +3,7 @@
 
     // TODO: Implement delete account functionality
 
-    $mainDesktopPage = "../template/home.php";
+    $templateParams["desktop"]["main"] = "../template/home.php";
 
     require("../template/base.php");
 ?>

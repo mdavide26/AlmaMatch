@@ -1,9 +1,6 @@
 <?php
     require_once("bootstrap.php");
 
-    $mainDesktopPage = "home.php";
-    $desktopSidePage = $_GET["page"] ?? "matches";
-
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"]) && isset($_POST["password"])) {
         // TODO: Implement authentication logic here
         // For now, set the session user to a placeholder value
@@ -13,6 +10,8 @@
     if (isset($_SESSION["email"])) {
         $templateParams["name"] = "home.php";
         $templateParams["title"] = "Home";
+        $templateParams["desktop"]["main"] = $templateParams["name"];
+        $templateParams["desktop"]["side"] = "matches.php";
     } else {
         header("Location: ".PROJECT_DIR."auth/");
         exit();
