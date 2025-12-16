@@ -10,6 +10,7 @@
 body {
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);
+    user-select: none;
 }
 
 main {
@@ -31,8 +32,11 @@ main {
     letter-spacing: 0.7px;
 }
 
-footer a {
+.icons-menu a {
     font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .mobile-header .Alma {
@@ -42,6 +46,76 @@ footer a {
 .icons-menu {
     padding-bottom: var(--safe-area-inset-bottom);
     height: calc(5rem + var(--safe-area-inset-bottom));
+}
+
+aside {
+    background-color: #282828;
+    /*border-radius: 1rem;*/
+    border: 1px solid #DF693E;
+}
+
+.desktop-nav {
+    background: linear-gradient(to bottom, #ff4400, #ff7644);
+    /*border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;*/
+    height: 10vh;
+}
+
+.desktop-nav a {
+    height: 10vh;
+    border-radius: 3rem;
+}
+
+.desktop-nav .profile-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.desktop-nav a img {
+    border-radius: 100%;
+}
+
+.desktop-nav a span {
+    font-family: var(--family-font);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05rem;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.desktop-icons a {
+    height: clamp(3.25vh, 3.5vw, 5vh);
+    width: clamp(3.25vh, 3.5vw, 5vh);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.desktop-icons a i {
+    font-size: 2vh;
+}
+
+.desktop-icons a:hover i {
+    color: rgba(255, 92, 33, 0.7);
+}
+
+.desktop-sidebar-content header a {
+    font-family: var(--family-font);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.005rem;
+}
+
+.desktop-sidebar-content header span {
+    font-family: var(--family-font);
+    font-weight: 900;
+    color: #6d6d6d;
+    user-select: none;
+}
+
+.desktop-sidebar-content header a.selected {
+    border-bottom: 0.25rem solid #DF693E;
 }
 
 /* LIGHT THEME */

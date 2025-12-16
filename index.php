@@ -5,13 +5,13 @@
         // TODO: Implement authentication logic here
         // For now, set the session user to a placeholder value
         $_SESSION["email"] = $_POST["email"];
-        header("Location: " . PROJECT_DIR);
-        exit();
     }
 
     if (isset($_SESSION["email"])) {
         $templateParams["name"] = "home.php";
         $templateParams["title"] = "Home";
+        $templateParams["desktop"]["main"] = $templateParams["name"];
+        $templateParams["desktop"]["side"] = "matches.php";
     } else {
         header("Location: ".PROJECT_DIR."auth/");
         exit();

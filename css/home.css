@@ -4,7 +4,7 @@
 
 .image-container img {
     object-fit: cover;
-    border-radius: 3rem;
+    border-radius: 1rem;
 }
 
 .image-container i {
@@ -36,11 +36,15 @@ span.study-plan {
     font-weight: 300;
 }
 
-div button {
+
+.home-btn {
     border-radius: 100%;
-    width: clamp(3.5rem, 18vw, 4.5rem);
-    height: clamp(3.5rem, 18vw, 4.5rem);
+    width: clamp(5vw, 15vw, 20vw);
+    height: clamp(5vw, 15vw, 20vw);
     border: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .refresh-icon {
@@ -65,6 +69,12 @@ div button {
     color: #0088FF;
 }
 
+.home-btn i, .home-btn svg {
+    font-size: 5vw;
+    width: 50%;
+    height: 50%;
+}
+
 /***************/
 /* LIGHT THEME */
 /***************/
@@ -79,7 +89,7 @@ div button {
     text-stroke: 0.5px rgb(240, 240, 240);
 }
 
-[data-bs-theme="light" i] div button {
+[data-bs-theme="light" i] .home-btn {
     background-color: #F0F0F0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -98,7 +108,18 @@ div button {
     text-stroke: 0.5px rgb(22, 22, 22);
 }
 
-[data-bs-theme="dark" i] div button {
+[data-bs-theme="dark" i] .home-btn {
     background-color: #1E1E1E;
     box-shadow: 0 4px 12px rgb(22, 22, 22);
+}
+
+@media (min-width: 768px) {
+    .home-btn {
+        width: clamp(5vh, 7vh, 10vh);
+        height: clamp(5vh, 7vh, 10vh);
+    }
+
+    .home-btn i, .home-btn svg {
+        font-size: 2.5vh;
+    }
 }

@@ -5,4 +5,4 @@ const setTheme = () => {
 
 setTheme();
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);

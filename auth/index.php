@@ -7,18 +7,19 @@
     }
 
     $page = $_GET["page"] ?? 'login';
+    $authPage = true;
 
     switch ($page) {
         case 'forgot-password':
-            $templateParams["name"] = "forgot-password.php";
+            $templateParams["name"] = "../auth/forgot-password.php";
             $templateParams["title"] = "Forgot Password";
             break;
         case 'register':
-            $templateParams["name"] = "register.php";
+            $templateParams["name"] = "../auth/register.php";
             $templateParams["title"] = "Register";
             break;
         case 'login':
-            $templateParams["name"] = "login.php";
+            $templateParams["name"] = "../auth/login.php";
             $templateParams["title"] = "Login";
             break;
         default:
@@ -26,5 +27,7 @@
             exit();
     }
 
+    $templateParams["desktop"]["main"] = "../template/home.php";
+    
     require("../template/base.php");
 ?>
