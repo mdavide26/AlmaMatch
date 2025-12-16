@@ -7,15 +7,18 @@
         $_SESSION["email"] = $_POST["email"];
     }
 
-    if (isset($_SESSION["email"])) {
-        $templateParams["name"] = "home.php";
-        $templateParams["title"] = "Home";
-        $templateParams["desktop"]["main"] = $templateParams["name"];
-        $templateParams["desktop"]["side"] = "matches.php";
-    } else {
+    if (!isset($_SESSION["email"])) {
         header("Location: ".PROJECT_DIR."auth/");
         exit();
     }
+
+    $templateParams["name"] = "home.php";
+    $templateParams["title"] = "Home";
+
+    $templateParams["desktop"]["main"] = $templateParams["name"];
+    $templateParams["desktop"]["side"] = "matches.php";
+    
+    $templateParams["resources"]["css"] = ["home.css", "matches.css"];
 
     require("template/base.php");
 ?>

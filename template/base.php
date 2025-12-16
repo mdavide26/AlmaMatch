@@ -14,17 +14,9 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/base.css"; ?>">
-    <?php if (isset($authPage) && $authPage): ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/auth.css"; ?>" />
-    <?php else: ?>
-        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/home.css"; ?>">
-        <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/".basename($templateParams["name"], ".php").".css"; ?>">
-        
-        <?php if ($templateParams["name"] == "home.php" || $templateParams["name"] == "messages.php"): ?>
-            <link rel="stylesheet" href="<?php echo PROJECT_DIR."css/matches.css"; ?>">
-        <?php endif; ?>
-        
-    <?php endif; ?>
+    <?php foreach($templateParams["resources"]["css"] as $cssFile): ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo PROJECT_DIR."css/".$cssFile; ?>">
+    <?php endforeach; ?>
     <title>AlmaMatch | <?php echo $templateParams["title"]; ?></title>
     <script src="<?php echo PROJECT_DIR."js/base.js"; ?>"></script>
 </head>
@@ -101,7 +93,7 @@
             <?php 
                 $currentPage = basename($templateParams["name"], ".php");
 
-                foreach(ICONS_MENU as $icon):
+                foreach(MOBILE_ICONS_MENU as $icon):
                     $activePages = [];
                     if ($icon['page'] === 'explorer') {
                         $activePages = ['explorer', 'explorer-category'];

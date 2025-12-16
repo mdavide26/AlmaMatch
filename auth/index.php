@@ -27,7 +27,7 @@
             exit();
     }
 
-    $templateParams["desktop"]["main"] = "../template/home.php";
+    $templateParams["resources"]["css"] = ["auth.css"];
     
     require("../template/base.php");
 ?>

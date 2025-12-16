@@ -4,6 +4,4 @@
     session_destroy();
     header("Location: ".PROJECT_DIR);
     exit();
-
-    require("../template/base.php");
 ?>
