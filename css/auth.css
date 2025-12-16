@@ -87,6 +87,10 @@ a {
     border-radius: 0.8rem;
 }
 
+.login-btn:hover {
+    background: #9b3e00;
+}
+
 /***************/
 /* LIGHT THEME */
 /***************/

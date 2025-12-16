@@ -10,6 +10,7 @@
 body {
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);
+    user-select: none;
 }
 
 main {
@@ -49,14 +50,14 @@ main {
 
 aside {
     background-color: #282828;
-    border-radius: 1rem;
+    /*border-radius: 1rem;*/
     border: 1px solid #DF693E;
 }
 
 .desktop-nav {
     background: linear-gradient(to bottom, #ff4400, #ff7644);
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    /*border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;*/
     height: 10vh;
 }
 
@@ -89,6 +90,10 @@ aside {
     align-items: center;
     display: flex;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.desktop-icons a i {
+    font-size: 2vh;
 }
 
 .desktop-icons a:hover i {

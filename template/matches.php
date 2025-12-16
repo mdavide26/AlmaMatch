@@ -1,4 +1,4 @@
-<div class="d-none d-md-flex row row-cols-md-2 row-cols-xl-3 matches-container align-items-center g-2">
+<div class="d-none d-md-flex row row-cols-md-2 row-cols-xl-3 matches-container align-items-center g-2 px-3">
     <div class="image-container col justify-content-center d-flex">
         <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" alt="That image contains a background picture of a sunset with purple and orange colors.">
     </div>

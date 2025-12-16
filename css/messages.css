@@ -4,6 +4,11 @@
     letter-spacing: 0.015em;
 }
 
+.message-link-component.selected {
+    background-color: rgba(0,0,0,0.3);
+    border-right: 0.5rem solid rgb(255, 149, 50);
+}
+
 .message-link-component img {
     object-fit: cover;
     border-radius: 100%;
@@ -30,4 +35,9 @@ main .message-link-component img {
 aside .message-link-component img {
     width: 7vh;
     height: 7vh;
+}
+
+.message-link-component:hover {
+    background-color: rgba(0,0,0,0.3);
+    border-right: 0.5rem solid rgb(255, 149, 50);
 }

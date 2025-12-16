@@ -33,11 +33,10 @@
     <!-- Content visible for Desktop -->
     <div class="d-none d-md-flex row p-0 vh-100" role="desktop-content">
         <?php if (!isset($authPage) || !$authPage): ?>
-            <!-- Aggiunto h-100 e overflow-hidden qui sotto -->
             <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start h-100 overflow-hidden">
                 <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center ps-4 pe-2 justify-content-between" role="navigation">
-                    <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 d-flex align-items-center gap-2 text-decoration-none" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
-                        <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
+                    <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 d-flex align-items-center gap-2 text-decoration-none p-1 pe-3" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
+                        <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-100" alt="That image contains your profile picture.">
                         <span>You</span>
                     </a>
                     <div class="desktop-icons d-flex flex-row justify-content-end align-items-center gap-1 ms-1" role="desktop-icons-menu">
@@ -62,7 +61,7 @@
                             <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
                         </header>
                     <?php endif; ?>
-                    <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
+                    <div class="flex-grow-1 w-100 overflow-y-auto overflow-x-hidden" role="sidebar-main-content">
                         <?php
                             require($templateParams["desktop"]["side"]);
                         ?>

@@ -1,6 +1,6 @@
-<div class="d-none d-md-flex flex-column gap-3 py-1 ps-1 w-100">
+<div class="d-none d-md-flex flex-column py-1 w-100 overflow-y-auto h-100" style="direction: rtl;">
     <?php for ($i = 0; $i < 15; $i++): ?>
-        <a class="message-link-component d-flex flex-row text-decoration-none" href="#">
+        <a class="message-link-component d-flex flex-row text-decoration-none py-2 ps-3 pe-2" href="#" style="direction: ltr;">
             <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="message-img" alt="That image contains a background picture of a sunset with purple and orange colors.">
             <div class="message-info d-flex flex-column justify-content-center px-3 overflow-hidden w-100">
                 <span class="message-username">Primo</span>
