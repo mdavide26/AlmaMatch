@@ -33,8 +33,8 @@
             <div class="info-item d-flex align-items-center py-2 position-relative">
                 <button type="button" id="partner-select-btn" class="info-label w-100 d-flex align-items-center justify-content-between px-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                     <span id="partner-select-text" class="info-text text-truncate">Select...</span>
-                    <i class="fi fi-br-angle-small-right"></i>
                 </button>
+                <i class="fi fi-br-angle-small-right position-absolute end-0 pe-3 user-select-none pe-none"></i>
                 <ul class="dropdown-menu w-100" aria-labelledby="partner-select-btn">
                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input me-2" value="Computer Science">Computer Science</label></li>
                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input me-2" value="Biology">Biology</label></li>
@@ -52,8 +52,8 @@
             <div class="info-item d-flex align-items-center py-2 position-relative">
                 <button type="button" id="comm-style-select-btn" class="info-label w-100 d-flex align-items-center justify-content-between px-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                     <span id="comm-style-select-text" class="info-text text-truncate">Select...</span>
-                    <i class="fi fi-br-angle-small-right"></i>
                 </button>
+                <i class="fi fi-br-angle-small-right position-absolute end-0 pe-3 user-select-none pe-none"></i>
                 <ul class="dropdown-menu w-100" aria-labelledby="comm-style-select-btn">
                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input me-2" value="In Real Life">In Real Life</label></li>
                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input me-2" value="Online">Online</label></li>
