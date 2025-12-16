@@ -32,41 +32,43 @@
 <body class="container-fluid p-0 overflow-x-hidden">
     <!-- Content visible for Desktop -->
     <div class="d-none d-md-flex row p-0 vh-100" role="desktop-content">
-        <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start">
-            <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center ps-4 pe-2 justify-content-between" role="navigation">
-                <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 d-flex align-items-center gap-2 text-decoration-none" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
-                    <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
-                    <span>You</span>
-                </a>
-                <div class="desktop-icons d-flex flex-row justify-content-end align-items-center gap-1 ms-1" role="desktop-icons-menu">
-                    <?php 
-                        foreach(DESKTOP_ICONS_MENU as $icon):
-                            if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
-                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?> fs-md-2 fs-lg-4"></i></a>
-                            <?php else: ?>
-                                <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>"><i class="<?php echo $icon['icon']; ?> fs-md-2 fs-lg-4"></i></a>
-                            <?php endif;
-                        endforeach;
-                    ?>
+        <?php if (!isset($authPage) || !$authPage): ?>
+            <!-- Aggiunto h-100 e overflow-hidden qui sotto -->
+            <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start h-100 overflow-hidden">
+                <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center ps-4 pe-2 justify-content-between" role="navigation">
+                    <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 d-flex align-items-center gap-2 text-decoration-none" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
+                        <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-75 " alt="That image contains your profile picture.">
+                        <span>You</span>
+                    </a>
+                    <div class="desktop-icons d-flex flex-row justify-content-end align-items-center gap-1 ms-1" role="desktop-icons-menu">
+                        <?php 
+                            foreach(DESKTOP_ICONS_MENU as $icon):
+                                if ($icon['page'] === basename($templateParams["name"], ".php")): ?>
+                                    <a href="<?php echo $icon['href']; ?>" class="text-decoration-none" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>" style="color: #DF693E;"><i class="<?php echo $icon['icon']; ?> fs-md-2 fs-lg-4"></i></a>
+                                <?php else: ?>
+                                    <a href="<?php echo $icon['href']; ?>" class="text-decoration-none text-secondary" role="<?php echo $icon['page']."-icon"; ?>" aria-label="<?php echo "Go to the ".$icon['page']." page."; ?>"><i class="<?php echo $icon['icon']; ?> fs-md-2 fs-lg-4"></i></a>
+                                <?php endif;
+                            endforeach;
+                        ?>
+                    </div>
+                </nav>
+                <div class="desktop-sidebar-content w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-start overflow-hidden">
+                    <?php if ($templateParams["name"] == "home.php" 
+                            || $templateParams["name"] == "messages.php" 
+                            || $templateParams["name"] == "matches.php"): ?>
+                        <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
+                            <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR; ?>">Matches</a>
+                            <span>|</span>
+                            <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
+                        </header>
+                    <?php endif; ?>
+                    <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
+                        <?php
+                            require($templateParams["desktop"]["side"]);
+                        ?>
+                    </div>
                 </div>
-            </nav>
-            <div class="desktop-sidebar-content w-100 flex-grow-1 d-flex flex-column align-items-center justify-content-start">
-                <?php if ($templateParams["name"] == "home.php" 
-                        || $templateParams["name"] == "messages.php" 
-                        || $templateParams["name"] == "matches.php"): ?>
-                    <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
-                        <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR; ?>">Matches</a>
-                        <span>|</span>
-                        <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
-                    </header>
-                <?php endif; ?>
-                <div class="flex-grow-1 w-100 overflow-y-auto px-3" role="sidebar-main-content">
-                    <?php
-                        require($templateParams["desktop"]["side"]);
-                    ?>
-                </div>
-            </div>
-        </aside>
+            </aside>
         <div class="col-md-1 col-lg-2 col-xl-3"></div>
         <main class="col-md-6 col-lg-5 col-xl-3">
             <?php
@@ -74,6 +76,15 @@
             ?>
         </main>
         <div class="col-md-1 col-lg-2 col-xl-3"></div>
+        <?php else: ?>
+            <div class="col-3"></div>
+            <main class="col-6 px-5">
+                <?php
+                    require($templateParams["name"]);
+                ?>
+            </main>
+            <div class="col-3"></div>
+        <?php endif; ?>
     </div>
 
     <!-- Content visible for Mobile -->

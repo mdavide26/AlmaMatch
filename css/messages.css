@@ -1,0 +1,33 @@
+.matches-container,
+.messages-container {
+    font-family: var(--family-font);
+    letter-spacing: 0.015em;
+}
+
+.message-link-component img {
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.message-link-component .message-info .message-username {
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.message-link-component .message-info .message-last-message {
+    font-size: 1rem;
+    letter-spacing: 0.025rem;
+    color: #8f8f8f;
+}
+
+main .message-link-component img {
+    width: 17vw;
+    height: 17vw;
+}
+
+aside .message-link-component img {
+    width: 7vh;
+    height: 7vh;
+}

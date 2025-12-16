@@ -5,7 +5,7 @@
         $templateParams["name"] = "explorer.php";
         $templateParams["title"] = "Explorer";
         $templateParams["desktop"]["main"] = "../template/home.php";
-        $templateParams["desktop"]["side"] = "explorer.php";
+        $templateParams["desktop"]["side"] = $templateParams["name"];
     } else {
         header("Location: ".PROJECT_DIR."auth/");
         exit();
