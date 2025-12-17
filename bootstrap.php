@@ -7,6 +7,9 @@
     
     // Start the session
     // TODO: Implement session management
+    $dbh = new DatabaseHelper("localhost", "root", "", "almamatch", 3306);
+    $matches = $dbh->getMatchesForUser(2);
+    var_dump($matches);
 
     define("PROJECT_DIR", "/AlmaMatch/");
     define("UPLOAD_DIR", PROJECT_DIR."upload/");
