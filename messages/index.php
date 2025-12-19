@@ -14,5 +14,8 @@
     
     $templateParams["resources"]["css"] = ["home.css", "messages.css"];
 
+    $templateParams["matches"] = $dbh->getMatchesForUser(2);
+    $templateParams["chats"] = $dbh->getChatsForUser(2);
+
     require("../template/base.php");
 ?>

@@ -17,6 +17,8 @@
 
     $templateParams["desktop"]["main"] = $templateParams["name"];
     $templateParams["desktop"]["side"] = "matches.php";
+
+    $templateParams["matches"] = $dbh->getMatchesForUser(2);
     
     $templateParams["resources"]["css"] = ["home.css", "matches.css"];
 
