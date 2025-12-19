@@ -48,13 +48,14 @@ class DatabaseHelper {
                     ELSE 'THEM' 
                 END AS last_sender
             FROM USERS u
-            /* Join con la tabella MESSAGES per ottenere l'ultimo messaggio tra l'utente e ogni altro utente */
+            /* Join con la tabella MESSAGES per ottenere tutti i messaggi in cui l'utente è coinvolto */
             JOIN MESSAGES m ON (
                 (m.sender_id = ? AND m.receiver_id = u.user_id) OR 
                 (m.receiver_id = ? AND m.sender_id = u.user_id)
             )
             /* Join con USER_IMAGES per ottenere l'immagine dell'altro utente */
             LEFT JOIN USER_IMAGES img ON u.user_id = img.user_id AND img.display_order = 1
+            /* Assegno alla condizione di ricerca che voglio l'ultimo messaggio per ogni chat */
             WHERE m.message_id = (
                 /* Query per ottenere l'ultimo messaggio tra l'utente e un altro utente */
                 SELECT m2.message_id
