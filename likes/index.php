@@ -1,7 +1,5 @@
 <?php
     require_once("../bootstrap.php");
-
-    $category = $_GET["category"] ?? 'explorer';
     
     if (!isset($_SESSION["email"])) {
         header("Location: ".PROJECT_DIR."auth/");

@@ -32,6 +32,10 @@ span.image-caption {
     font-weight: 700;
 }
 
+.testo-arancio {
+  color: #DF693E;
+}
+
 @media (max-width: 430px) {
   .cs-caption {
     visibility: hidden;   

@@ -71,6 +71,10 @@ span.study-plan {
 
 .home-btn i, .home-btn svg {
     font-size: 5vw;
+    display: inline-block;
+}
+
+.home-btn svg {
     width: 50%;
     height: 50%;
 }
