@@ -14,5 +14,8 @@
 
     $templateParams["resources"]["css"] = ["home.css", "likes.css"];
 
+    $templateParams["likes_sent"] = $dbh->getLikesSent(2);
+    $templateParams["likes_received"] = $dbh->getLikesReceived(2);
+
     require("../template/base.php");
 ?>

@@ -78,6 +78,50 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getLikesSent($userId) {
+    $query = "
+        SELECT 
+            u.user_id AS liked_user_id,
+            u.name,
+            u.surname,
+            u.email,
+            l.liked_at
+        FROM LIKES l
+        JOIN USERS u ON l.liked_id = u.user_id
+        WHERE l.liker_id = ?
+        ORDER BY l.liked_at DESC;
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getLikesReceived($userId) {
+    $query = "
+        SELECT 
+            u.user_id AS liker_user_id,
+            u.name,
+            u.surname,
+            u.email,
+            l.liked_at
+        FROM LIKES l
+        JOIN USERS u ON l.liker_id = u.user_id
+        WHERE l.liked_id = ?
+        ORDER BY l.liked_at DESC;
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 ?>
