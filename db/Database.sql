@@ -141,8 +141,6 @@ FROM MATCHES;
 -- Index Section
 -- _____________
 
--- 1. Inserimento UTENTI (USERS)
--- Nota: Le password qui sono in chiaro per esempio. In produzione dovrebbero essere hashate.
 INSERT INTO USERS (name, surname, email, password, role) VALUES 
 ('Mario', 'Rossi', 'mario.rossi@studio.unibo.it', 'password123', 'STUDENT'),       -- ID: 1
 ('Luca', 'Bianchi', 'luca.bianchi@studio.unibo.it', 'password123', 'STUDENT'),     -- ID: 2
@@ -151,7 +149,6 @@ INSERT INTO USERS (name, surname, email, password, role) VALUES
 ('Marco', 'Gialli', 'marco.gialli@studio.unibo.it', 'password123', 'STUDENT'),     -- ID: 5
 ('Admin', 'Super', 'admin@almamatch.it', 'adminpass', 'ADMIN');                    -- ID: 6
 
--- 2. Inserimento DETTAGLI STUDENTI (STUDENT_DETAILS)
 INSERT INTO STUDENT_DETAILS (user_id, study_plan, searching_partners, communication_style) VALUES
 (1, 'Informatica per il Management', 'BIOLOGY', 'CHAT'),
 (2, 'Scienze Biologiche', 'COMPUTER SCIENCE', 'VIDEO CALL'),
@@ -159,16 +156,14 @@ INSERT INTO STUDENT_DETAILS (user_id, study_plan, searching_partners, communicat
 (4, 'Ingegneria Meccanica', 'ELECTRONIC', 'IN PERSON'),
 (5, 'Informatica', 'BIOLOGY', 'CHAT');
 
--- 3. Inserimento IMMAGINI UTENTI (USER_IMAGES)
 INSERT INTO USER_IMAGES (user_id, image_path, alt_text, display_order) VALUES
-(1, '/uploads/mario1.jpg', 'Mario al mare', 1),
-(1, '/uploads/mario2.jpg', 'Mario in biblioteca', 2),
-(2, '/uploads/luca1.jpg', 'Luca che suona la chitarra', 1),
-(3, '/uploads/giulia1.jpg', 'Giulia ritratto', 1),
-(4, '/uploads/sofia1.jpg', 'Sofia escursione', 1),
-(5, '/uploads/marco1.jpg', 'Marco laurea', 1);
+(1, '/1.jpg', 'Mario al mare', 1),
+(1, '/mario2.jpg', 'Mario in biblioteca', 2),
+(2, '/luca1.jpg', 'Luca che suona la chitarra', 1),
+(3, '/giulia1.jpg', 'Giulia ritratto', 1),
+(4, '/sofia1.jpg', 'Sofia escursione', 1),
+(5, '/marco1.jpg', 'Marco laurea', 1);
 
--- 4. Inserimento LIKES
 -- Mario (1) mette like a Luca (2)
 -- Luca (2) mette like a Mario (1) -> Questo creerà un MATCH logico
 -- Giulia (3) mette like a Sofia (4)
@@ -177,23 +172,19 @@ INSERT INTO LIKES (liker_id, liked_id) VALUES
 (2, 1),
 (3, 4);
 
--- 5. Inserimento DISLIKES
 -- Sofia (4) non è interessata a Marco (5)
 INSERT INTO DISLIKES (disliker_id, disliked_id) VALUES
 (4, 5);
 
--- 6. Inserimento SUPERLIKES
 -- Marco (5) è molto interessato a Giulia (3)
 INSERT INTO SUPERLIKES (superliker_id, superliked_id) VALUES
 (5, 3);
 
--- 7. Inserimento MATCHES
 -- Poiché Mario (1) e Luca (2) si sono messi like a vicenda, inseriamo il match.
 -- Constraint: student1_id < student2_id
 INSERT INTO MATCHES (student1_id, student2_id) VALUES
 (1, 2);
 
--- 8. Inserimento MESSAGGI (MESSAGES)
 -- Conversazione tra Mario (1) e Luca (2)
 INSERT INTO MESSAGES (sender_id, receiver_id, content) VALUES
 (1, 2, 'Ciao Luca! Ho visto che studi Biologia, interessante!'),
@@ -201,10 +192,6 @@ INSERT INTO MESSAGES (sender_id, receiver_id, content) VALUES
 (2, 1, 'Ehi Mario! Sì esatto. Tu Informatica? Mi servirebbe una mano con Python ahah'),
 (1, 2, 'Volentieri, se mi aiuti con Genetica siamo pari!');
 
--- 9. Inserimento PRIME IMPRESSIONI (FIRST_IMPRESSIONS)
 INSERT INTO FIRST_IMPRESSIONS (viewer_id, viewed_id, impression) VALUES
 (3, 5, 'Sembra una persona molto studiosa e seria.');
-
--- 10. Inserimento SEGNALAZIONI (REPORTS)
--- Qualcuno segnala Marco
 

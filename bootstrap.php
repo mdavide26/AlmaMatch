@@ -9,7 +9,7 @@
     // TODO: Implement session management
     $dbh = new DatabaseHelper("localhost", "root", "", "almamatch", 3306);
 
-    define("PROJECT_DIR", "/AlmaMatch/");
+    define("PROJECT_DIR", str_replace($_SERVER['DOCUMENT_ROOT'], "", __DIR__) . "/");
     define("UPLOAD_DIR", PROJECT_DIR."upload/");
     define("PICTURES_DIR", UPLOAD_DIR."pictures/");
     define("MOBILE_ICONS_MENU", [

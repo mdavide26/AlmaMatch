@@ -85,7 +85,11 @@
         </header>
         <main class="flex-grow-1 d-flex flex-column overflow-y-auto">
             <?php
-                require($templateParams["name"]);
+                if ($templateParams["title"] == "Directs") {
+                    require($templateParams["desktop"]["main"]);
+                } else {
+                    require($templateParams["name"]);
+                }
             ?>
         </main>
         <?php if ($templateParams["name"] != "login.php" && $templateParams["name"] != "register.php"): ?>
