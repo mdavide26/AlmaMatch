@@ -15,6 +15,7 @@ class DatabaseHelper {
     public function getMatchesForUser($userId) {
         $query = "
             SELECT
+                u.user_id,
                 u.name,
                 u.surname,
                 img.image_path,

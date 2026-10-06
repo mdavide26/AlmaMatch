@@ -8,7 +8,7 @@
     <header class="w-100 d-flex align-items-center px-3 direct-header my-2">
         <div class="profile-image-container">
             <img
-                src="<?php echo PICTURES_DIR.$profileImage["name"].$profileImage["image_path"]; ?>"
+                src="<?php echo PICTURES_DIR.$profileImage["user_id"].$profileImage["image_path"]; ?>"
                 class="profile-image"
                 alt="<?php echo $profileImage["alt_text"]; ?>"
             >
