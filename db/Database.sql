@@ -157,7 +157,7 @@ INSERT INTO STUDENT_DETAILS (user_id, study_plan, searching_partners, communicat
 (5, 'Informatica', 'BIOLOGY', 'CHAT');
 
 INSERT INTO USER_IMAGES (user_id, image_path, alt_text, display_order) VALUES
-(1, '/1.jpg', 'Mario al mare', 1),
+(1, '/mario1.jpg', 'Mario al mare', 1),
 (1, '/mario2.jpg', 'Mario in biblioteca', 2),
 (2, '/luca1.jpg', 'Luca che suona la chitarra', 1),
 (3, '/giulia1.jpg', 'Giulia ritratto', 1),

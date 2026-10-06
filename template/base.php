@@ -59,21 +59,18 @@
                     </div>
                 </div>
             </aside>
-        <div class="col-md-1 col-lg-2 col-xl-3"></div>
-        <main class="col-md-6 col-lg-5 col-xl-3">
+        <main class="col-md-8 col-lg-9 col-xl-9 px-0 py-0">
             <?php
                 require($templateParams["desktop"]["main"]);
             ?>
         </main>
-        <div class="col-md-1 col-lg-2 col-xl-3"></div>
+        <!-- TODO: TOLTO I DIV DI SEPARAZIONE, METTERLI DENTRO IL MAIN RISPETTIVO -->
         <?php else: ?>
-            <div class="col-3"></div>
             <main class="col-6 px-5">
                 <?php
                     require($templateParams["name"]);
                 ?>
             </main>
-            <div class="col-3"></div>
         <?php endif; ?>
     </div>
 

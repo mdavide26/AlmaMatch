@@ -121,6 +121,23 @@ class DatabaseHelper {
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    
+    public function getUserInfoById($userId) {
+        $query = "
+            SELECT 
+                * 
+            FROM USERS u
+            JOIN USER_IMAGES imgs ON u.user_id = imgs.user_id
+            WHERE u.user_id = ?
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 }
 
