@@ -49,15 +49,15 @@ main {
 }
 
 aside {
+    position: relative;
+    z-index: 2;
     background-color: #282828;
-    /*border-radius: 1rem;*/
     border: 1px solid #DF693E;
+    box-shadow: 5px 0 10px 8px rgba(0, 0, 0, 0.75);
 }
 
 .desktop-nav {
     background: linear-gradient(to bottom, #ff4400, #ff7644);
-    /*border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;*/
     height: 10vh;
 }
 
@@ -114,7 +114,7 @@ aside {
     user-select: none;
 }
 
-.desktop-sidebar-content header a.selected {
+.aside-view.selected, .aside-view:hover {
     border-bottom: 0.25rem solid #DF693E;
 }
 

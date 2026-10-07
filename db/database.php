@@ -140,6 +140,27 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    function getDirectMessages($userId1, $userId2) {
+        $query = "
+            SELECT 
+                m.message_id,
+                m.sender_id,
+                m.receiver_id,
+                m.content,
+                m.sent_at
+            FROM MESSAGES m
+            WHERE (m.sender_id = ? AND m.receiver_id = ?) OR (m.sender_id = ? AND m.receiver_id = ?)
+            ORDER BY m.sent_at ASC;
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("iiii", $userId1, $userId2, $userId2, $userId1);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 ?>

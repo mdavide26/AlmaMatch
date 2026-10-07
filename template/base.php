@@ -24,7 +24,7 @@
     <!-- Content visible for Desktop -->
     <div class="d-none d-md-flex row p-0 vh-100" role="desktop-content">
         <?php if (!isset($authPage) || !$authPage): ?>
-            <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start h-100 overflow-hidden">
+            <aside class="col-md-4 col-lg-3 col-xl-3 p-0 d-flex flex-column align-items-center justify-content-start h-100" role="sidebar">
                 <nav class="desktop-nav w-100 py-3 d-flex flex-row align-items-center ps-4 pe-2 justify-content-between" role="navigation">
                     <a href="<?php echo PROJECT_DIR."profile/"; ?>" class="profile-btn h-75 d-flex align-items-center gap-2 text-decoration-none p-1 pe-3" role="profile-link" aria-label="Go to your profile page to view or edit your information.">
                         <img src="<?php echo PICTURES_DIR."Primo/1.png"; ?>" class="h-100" alt="That image contains your profile picture.">
@@ -47,9 +47,9 @@
                             || $templateParams["name"] == "messages.php" 
                             || $templateParams["name"] == "matches.php"): ?>
                         <header class="d-flex flex-row w-100 align-items-start py-3 justify-content-around" role="sidebar-links">
-                            <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR; ?>">Matches</a>
+                            <a class="aside-view text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "matches") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR; ?>">Matches</a>
                             <span>|</span>
-                            <a class="text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
+                            <a class="aside-view text-decoration-none <?php echo (basename($templateParams["desktop"]["side"], ".php") === "messages") ? "selected" : ""; ?>" href="<?php echo PROJECT_DIR."messages/"; ?>">Messages</a>
                         </header>
                     <?php endif; ?>
                     <div class="flex-grow-1 w-100 overflow-y-auto overflow-x-hidden" role="sidebar-main-content">

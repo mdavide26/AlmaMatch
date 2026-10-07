@@ -8,13 +8,13 @@
     font-weight: 800;
     letter-spacing: 0.05rem;
     font-size: 1.25rem;
-    color: #ffffff;
+    color: var(--bs-white);
 }
 
 .message-link-component .message-info .message-last-message {
     font-size: 1rem;
     letter-spacing: 0.025rem;
-    color: #8f8f8f;
+    color: var(--bs-secondary);
 }
 
 main .message-link-component img {
@@ -27,7 +27,8 @@ aside .message-link-component img {
     height: 7vh;
 }
 
-.message-link-component:hover .message-link-component.selected {
+.message-link-component:hover,
+.message-link-component.selected {
     background-color: rgba(0,0,0,0.3);
     border-right: 0.5rem solid rgb(255, 149, 50);
 }
@@ -48,5 +49,60 @@ aside .message-link-component img {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.05rem;
-    color: #ffffff86;
+    color: var(--bs-secondary);
+}
+
+.direct-container {
+    background-color: #282828;
+    border: 1px solid #DF693E;
+}
+
+.direct-info-container {
+    position: relative;
+    z-index: 2;
+    background-color: #282828;
+    border: 1px solid #DF693E;
+    box-shadow: -5px 0 10px 8px rgba(0, 0, 0, 0.75);
+}
+
+.message-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+}
+
+.message-container {
+    width: fit-content;
+    padding: 0.6rem 0.9rem;
+    border-radius: 1rem;
+}
+
+.sent-message {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.received-message {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.sent-message .message-container {
+    background-color: #DF693E;
+    color: #ffffff;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.received-message .message-container {
+    background-color: #444444;
+    color: #ffffff;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.message-date {
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+    color: #999999;
 }
