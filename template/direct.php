@@ -52,5 +52,36 @@
 
     <div class="direct-info-container d-flex flex-column vh-100 col-lg-4" style="background-color: #4e2f0d;">
         <!-- TODO: Aggiungere le informazioni dell'utente con cui si è matchato, come la sua bio, interessi, ecc. -->
+        <div class="direct-info-profile-image-container d-flex justify-content-start flex-column w-100">
+            <span class="fs-6 fw-bold text-light m-2">
+                <?php echo "$userInfo[name] $userInfo[surname]"; ?>
+            </span>
+
+            <div class="images-container w-100"
+                style="height: 50vh !important; max-height: 50vh; overflow: hidden;">
+                <img
+                    src="<?php echo PICTURES_DIR.$profileImage["user_id"].$profileImage["image_path"]; ?>"
+                    class="images w-100"
+                    style="height: 100%; object-fit: cover; display: block;"
+                    alt="<?php echo $profileImage["alt_text"]; ?>"
+                >
+            </div>
+
+            <div class="direct-info-details-container d-flex flex-column w-100 px-2 py-3 gap-3">
+                <div class="category d-flex flex-column gap-2">
+                    <span class="fs-6 fw-bold text-light">Study Plan</span>
+                    <p class="text-light"><?php echo $userInfo["study_plan"] ?? "No study plan available."; ?></p>
+                </div>
+                <div class="category d-flex flex-column gap-2">
+                    <span class="fs-6 fw-bold text-light">Searching Partners</span>
+                    <p class="text-light"><?php echo $userInfo["searching_partners"] ?? "No information available."; ?></p>
+                </div>
+                <div class="category d-flex flex-column gap-2">
+                    <span class="fs-6 fw-bold text-light">Communication Style</span>
+                    <p class="text-light"><?php echo $userInfo["communication_style"] ?? "No information available."; ?></p>
+                </div>
+            </div>
+
+            
     </div>
 </div>

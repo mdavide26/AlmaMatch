@@ -11,11 +11,14 @@
         $message_content = $_POST["message_content"];
         $sender_id = $_SESSION["user_id"];
 
-        echo "Sender ID: $sender_id, Receiver ID: $receiver_id, Message Content: $message_content";
+        if (empty($receiver_id) || empty($message_content)) {
+            header("Location: " . PROJECT_DIR . "messages/");
+            exit();
+        }
 
-        // TODO: Salvare il messaggio nel database
+        $dbh->saveMessage($sender_id, $receiver_id, $message_content);
 
-        header("Location: " . PROJECT_DIR . "messages/?direct=" . urlencode($receiver_id));
+        header("Location: " . PROJECT_DIR . "messages/?direct=" . $receiver_id);
         exit();
     }
 

@@ -129,6 +129,7 @@ class DatabaseHelper {
                 * 
             FROM USERS u
             JOIN USER_IMAGES imgs ON u.user_id = imgs.user_id
+            JOIN STUDENT_DETAILS sd ON u.user_id = sd.user_id
             WHERE u.user_id = ?
         ";
 
@@ -159,6 +160,17 @@ class DatabaseHelper {
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function saveMessage($senderId, $receiverId, $content) {
+        $query = "
+            INSERT INTO MESSAGES (sender_id, receiver_id, content)
+            VALUES (?, ?, ?);
+        ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("iis", $senderId, $receiverId, $content);
+        $stmt->execute();
     }
 
 }
